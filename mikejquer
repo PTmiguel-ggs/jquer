@@ -1,0 +1,28 @@
+
+$("#file").change(function () {
+    var file = document.getElementById('file').files[0];
+    //console.log(ext);
+
+    //if(file['size'] !== 262144 && file['size'] !== 262144 * 2 && file['name'].split('.').pop() !== 'rom'){
+    if (1 == 2) {
+        alert('BIOS file mistmatch!');
+    } else {
+        $(".upload-file").addClass('animate-flicker');
+        $(".upload-file h6").text('Uploading BIOS');
+        $("#step1 p").addClass('ready');
+        $("#step1 i").addClass('ready');
+        $("#step1 i.fa-upload").removeClass('fa-upload').addClass('fa-check');
+        setTimeout(function () {
+            $("#step2 p").addClass('ready');
+        }, 1000);
+        setTimeout(function () {
+            $(".upload-details p").addClass('ready');
+            $(".upload-details i").addClass('ready');
+            $(".upload-file").removeClass('animate-flicker');
+            $(".upload-file h6").text('Upload complete');
+            $(".fa-upload").removeClass('fa-upload').addClass('fa-check');
+            $(".fa-cog").removeClass('fa-cog').addClass('fa-check');
+            $(".fa-download").removeClass('fa-download').addClass('fa-check');
+        }, 5000);
+    }
+});
